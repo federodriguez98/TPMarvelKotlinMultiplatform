@@ -1,7 +1,6 @@
 package Presentacion
 
-import Modelo.Character
-import Presentacion.CharacterViewHolder
+import com.example.marveltptaller.Modelo.Character
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView

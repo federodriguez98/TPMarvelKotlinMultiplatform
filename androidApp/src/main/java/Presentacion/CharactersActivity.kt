@@ -1,6 +1,6 @@
 package Presentacion
 
-import Modelo.Character
+import com.example.marveltptaller.Modelo.Character
 import android.graphics.Rect
 import android.os.Bundle
 import android.view.View

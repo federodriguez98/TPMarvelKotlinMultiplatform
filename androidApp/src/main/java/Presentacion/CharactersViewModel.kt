@@ -1,10 +1,10 @@
 package Presentacion
 
-import Modelo.Character
+import com.example.marveltptaller.Modelo.Character
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import Modelo.CharactersService
+import com.example.marveltptaller.Modelo.CharactersService
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow

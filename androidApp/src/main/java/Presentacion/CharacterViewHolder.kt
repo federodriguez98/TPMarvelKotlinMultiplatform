@@ -1,6 +1,7 @@
 package Presentacion
 
-import Modelo.Character
+import com.example.marveltptaller.Modelo.Character
+import android.util.Log
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marveltptaller.android.databinding.ListItemCharacterBinding
 //import com.example.marveltptaller.android.databinding.ListItemCharacterBinding
@@ -12,9 +13,10 @@ class CharacterViewHolder(private val binding: ListItemCharacterBinding) : Recyc
     fun bind(character: Character) {
         binding.name.text = character.name
         binding.description.text = character.description
-        if (character.thumbnailUrl.isNotEmpty()) {
+        if (character.thumbnail.toUrl().isNotEmpty()) {
+            Log.d("thumbnail", character.thumbnail.toUrl())
             Picasso.get()
-                .load(character.thumbnailUrl)
+                .load(character.thumbnail.toUrl())
                 .into(binding.image)
         } else {
             binding.image.setImageURI(null)

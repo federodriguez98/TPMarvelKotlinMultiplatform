@@ -1,31 +1,13 @@
-package datos
+package com.example.marveltptaller.datos
 
-import Modelo.Character
-import Modelo.CharactersRepository
+import com.example.marveltptaller.Modelo.Character
+import com.example.marveltptaller.Modelo.CharactersRepository
 import io.github.aakira.napier.Napier
 import io.ktor.client.*
-import io.ktor.client.features.*
-import io.ktor.client.features.get
-import io.ktor.client.features.json.*
 import io.ktor.client.features.json.serializer.*
 import io.ktor.client.features.logging.*
 import io.ktor.client.request.*
-import io.ktor.client.statement.*
 import io.ktor.client.features.json.JsonFeature
-
-class KtorCharactersRepository2(private val apiClient: MarvelCharactersClient) : CharactersRepository {
-
-    override suspend fun getCharacters(timestamp: Long, md5: String): List<Character> {
-        return apiClient.getAllCharacters(timestamp, md5).toModel()
-    }
-
-    private fun CharactersResponse.toModel(): List<Character> {
-        return this.characters.list.map {
-            Character(it.name, it.description, it.thumbnail.toUrl())
-        }
-    }
-}
-
 class KtorCharactersRepository() : CharactersRepository {
     private val httpClient = HttpClient(){
        install(Logging){
@@ -44,6 +26,11 @@ class KtorCharactersRepository() : CharactersRepository {
     }
 
     override suspend fun getCharacters(timestamp: Long, md5: String): List<Character> {
-        return httpClient.get("https://gateway.marvel.com/v1/public/characters")
+        val res: ResponseMarvel = httpClient.get("https://gateway.marvel.com/v1/public/characters"){
+            parameter("ts",timestamp)
+            parameter("hash",md5)
+            parameter("apikey", Keys().kPublic)
+        }
+        return res.data.results
     }
 }

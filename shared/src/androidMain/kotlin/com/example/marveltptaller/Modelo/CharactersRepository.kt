@@ -1,4 +1,4 @@
-package Modelo
+package com.example.marveltptaller.Modelo
 
 interface CharactersRepository {
 
