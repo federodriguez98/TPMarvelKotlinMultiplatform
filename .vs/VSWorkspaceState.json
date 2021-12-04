@@ -1,0 +1,19 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\androidApp",
+    "\\androidApp\\src",
+    "\\androidApp\\src\\main",
+    "\\androidApp\\src\\main\\java",
+    "\\androidApp\\src\\main\\java\\Presentacion",
+    "\\shared",
+    "\\shared\\src",
+    "\\shared\\src\\androidMain",
+    "\\shared\\src\\androidMain\\kotlin",
+    "\\shared\\src\\androidMain\\kotlin\\com",
+    "\\shared\\src\\androidMain\\kotlin\\com\\example",
+    "\\shared\\src\\androidMain\\kotlin\\com\\example\\marveltptaller"
+  ],
+  "SelectedNode": "\\shared\\src\\androidMain\\kotlin\\com\\example\\marveltptaller\\CharactersService.kt",
+  "PreviewInSolutionExplorer": false
+}
